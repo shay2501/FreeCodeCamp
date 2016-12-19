@@ -1,0 +1,22 @@
+<script>
+var randNum;
+var num = [1, 2, 3, 4, 5];
+var tempNum = num.slice(); //this copies the memory location so all ops are really on num
+
+function random() {
+  if(tempNum.length == 0){
+    console.log("tempNum Length is 0");
+      tempNum = num;
+
+  }
+  console.log(tempNum);
+  randNum = Math.floor(Math.random() * tempNum.length);
+  console.log(randNum);
+  console.log(tempNum[randNum]);
+  tempNum.splice(randNum, 1);
+
+  return "done";
+}
+
+random();
+</script>
