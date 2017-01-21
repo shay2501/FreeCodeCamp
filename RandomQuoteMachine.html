@@ -8,18 +8,13 @@ var tempNum = num.slice(); //this copies the memory location so all ops are real
 
 function random() {
   if(tempNum.length == 0){
-    console.log("tempNum Length is 0");
       tempNum = num.slice();
-
   }
-  console.log(tempNum);
   randNum = Math.floor(Math.random() * tempNum.length);
-  console.log(randNum);
-  console.log(tempNum[randNum]);
 
-  console.log('text is:' + $('#number').text(tempNum[randNum]));
+ //update the div to display the currently selected random number
+  $('#number').text(tempNum[randNum]);
   tempNum.splice(randNum, 1);
-  return "done";
 }
 </script>
 </head>
