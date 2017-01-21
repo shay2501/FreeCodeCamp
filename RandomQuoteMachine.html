@@ -1,3 +1,6 @@
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
 var randNum;
 var num = [1, 2, 3, 4, 5];
@@ -6,17 +9,23 @@ var tempNum = num.slice(); //this copies the memory location so all ops are real
 function random() {
   if(tempNum.length == 0){
     console.log("tempNum Length is 0");
-      tempNum = num;
+      tempNum = num.slice();
 
   }
   console.log(tempNum);
   randNum = Math.floor(Math.random() * tempNum.length);
   console.log(randNum);
   console.log(tempNum[randNum]);
-  tempNum.splice(randNum, 1);
 
+  console.log('text is:' + $('#number').text(tempNum[randNum]));
+  tempNum.splice(randNum, 1);
   return "done";
 }
-
-random();
 </script>
+</head>
+<body>
+  Generate a Random number between 1 and 5<div id='number'></div>
+  <br>
+  <button onclick='random()'>New</button>
+</body>
+</html>
